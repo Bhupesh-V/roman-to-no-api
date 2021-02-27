@@ -1,10 +1,8 @@
 package controllers
 
 import (
-	// "fmt"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	// "errors"
 	"net/http"
 )
 
@@ -31,8 +29,7 @@ func ConvertRoman(c *gin.Context) {
 	}
 	integral, err := RomanToInt(input.Roman)
 	if err != nil {
-        fmt.Println(err)
-        c.JSON(http.StatusOK, gin.H{"roman": input.Roman, "error": err})
+        c.JSON(http.StatusOK, gin.H{"roman": input.Roman, "error": err.Error()})
     } else {
         c.JSON(http.StatusOK, gin.H{"roman": input.Roman, "integer": integral})
     }

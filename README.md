@@ -1,9 +1,14 @@
-# roman-to-no-api
+# Roman To Decimal Converter
 
-A simple REST API to Convert Roman Numeral to an Integral Value
+A simple REST API to Convert Roman Numeral to an Decimal Value
 
 [![Go](https://github.com/Bhupesh-V/roman-to-no-api/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/Bhupesh-V/roman-to-no-api/actions/workflows/go.yml)
 [![codecov](https://codecov.io/gh/Bhupesh-V/roman-to-no-api/branch/main/graph/badge.svg?token=MK95H1VJVL)](https://codecov.io/gh/Bhupesh-V/roman-to-no-api)
+
+## Demo
+
+![demo-api](https://user-images.githubusercontent.com/34342551/109393971-94726d80-794a-11eb-9632-ef1dbf33a941.gif)
+
 
 ## End Points
 
@@ -12,6 +17,11 @@ A simple REST API to Convert Roman Numeral to an Integral Value
    Post Body
    ```
    {"roman": "MCMXCIV"}
+   ```
+
+   Response
+   ```
+   {"integer":1994,"roman":"MCMXCIV"}
    ```
 
 ## Installation
@@ -33,8 +43,14 @@ A simple REST API to Convert Roman Numeral to an Integral Value
    go tool cover -html=coverage.out
    ```
 
-4. Executing
+4. Run Gin Development server
    ```bash
    go run main.go
    ```
+
+
+## License
+
+Copyright © 2021 [Bhupesh Varshney](https://github.com/Bhupesh-V).<br />
+This project is [MIT](https://github.com/Bhupesh-V/areyouok/blob/master/LICENSE) licensed.
 

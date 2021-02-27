@@ -3,6 +3,7 @@ package controllers
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+    "strings"
 	"net/http"
 )
 
@@ -27,11 +28,17 @@ func ConvertRoman(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	integral, err := RomanToInt(input.Roman)
-	if err != nil {
+
+    err := CheckValidRoman(input.Roman)
+    if err != nil {
         c.JSON(http.StatusOK, gin.H{"roman": input.Roman, "error": err.Error()})
     } else {
-        c.JSON(http.StatusOK, gin.H{"roman": input.Roman, "integer": integral})
+        decimal, err := RomanToInt(input.Roman)
+        if err != nil {
+            c.JSON(http.StatusOK, gin.H{"roman": input.Roman, "error": err.Error()})
+        } else {
+            c.JSON(http.StatusOK, gin.H{"roman": input.Roman, "integer": decimal})
+        }
     }
 }
 
@@ -62,4 +69,16 @@ func RomanToInt(roman string) (int, error) {
 		}
 	}
 	return total, nil
+}
+
+func CheckValidRoman(roman string) error {
+    // D, L, V can only appear once in roman numeral
+    onlyOnce := []string{"D", "L", "V"}
+
+    for _, ch := range onlyOnce {
+        if strings.Count(roman, ch) > 1 {
+            return fmt.Errorf("%s cannot only appear once", ch)
+        }
+    }
+    return nil
 }

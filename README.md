@@ -5,6 +5,11 @@ A simple REST API to Convert Roman Numeral to an Decimal Value
 [![Go](https://github.com/Bhupesh-V/roman-to-no-api/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/Bhupesh-V/roman-to-no-api/actions/workflows/go.yml)
 [![codecov](https://codecov.io/gh/Bhupesh-V/roman-to-no-api/branch/main/graph/badge.svg?token=MK95H1VJVL)](https://codecov.io/gh/Bhupesh-V/roman-to-no-api)
 
+---
+
+NOTE:
+this little project was given as a coding assignment for a Golang role(junior). I didn't get selected, might help someone
+
 ## Demo
 
 ![demo-api](https://user-images.githubusercontent.com/34342551/109393971-94726d80-794a-11eb-9632-ef1dbf33a941.gif)
